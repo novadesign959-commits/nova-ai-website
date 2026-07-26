@@ -129,7 +129,7 @@ Prescription Pad Design
 <button>La hadal AI</button>
 </div>
 <div class="chat-box">
-<input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;">
+<input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
 <button onclick="chat()">Dir</button>
 <div id="reply"></div>
 </div>

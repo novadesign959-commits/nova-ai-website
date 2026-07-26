@@ -88,6 +88,28 @@ button {
   border-radius: 15px;
   line-height: 1.6;
   }  
+  .chat-message {
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 15px;
+  max-width: 80%;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.user-message {
+  background: black;
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.ai-message {
+  background: #f1f1f1;
+  color: #333;
+  margin-right: auto;
+  text-align: left;
+}
 </style>
 </head>
 
@@ -152,8 +174,9 @@ else{
 answer = "Ku soo dhawoow 𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨. Waxaan kaa caawin karnaa Logo Design, Website Design, Branding, Book Cover, Business Card, Prescription Pad iyo adeegyo kale oo naqshadeyn ah. Fadlan ii sheeg adeegga aad rabto.";
 }
 
-document.getElementById("reply").innerHTML = answer;
-
+document.getElementById("reply").innerHTML =
+'<div class="user-message">' + msg + '</div>' +
+'<div class="ai-message">' + answer + '</div>';
 }
 </script>
   

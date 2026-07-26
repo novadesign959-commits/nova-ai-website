@@ -157,57 +157,35 @@ Prescription Pad Design
 </div>
 
 <script>
-function chat(){
-  
-let msg = document.getElementById("userInput").value.toLowerCase();
-let answer = "";
+async function chat() {
 
-if(msg.includes("logo")){
-answer = "Ku soo dhawoow 𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨. Waxaan kuu sameyn karnaa Logo Design casri ah oo xirfad leh, kaas oo matalaya ganacsigaaga una muuqda mid soo jiita macaamiisha. Waxaan kuu diyaarin karnaa naqshad ku habboon magaca iyo fikradda ganacsigaaga.";
-}
-
-else if(msg.includes("website")){
-answer = "𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨ waxaan sameynaa Website Design casri ah oo fudud in la isticmaalo. Website-ka wuxuu kaa caawinayaa inaad ganacsigaaga ku soo bandhigto internet-ka oo aad hesho macaamiil badan.";
-}
-
-else if(msg.includes("qiimo") || msg.includes("lacag") || msg.includes("price")){
-answer = "Qiimaha adeegyada 𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨ wuxuu ku xiran yahay adeegga aad rabto iyo faahfaahinta mashruuca. Nala soo xiriir si aan kuugu sharaxno qiimaha, habka lacag bixinta iyo tallaabooyinka dalabka.";
-}
-
-else if(msg.includes("dalbo") || msg.includes("order")){
-answer = "Si aad u dalbato adeegga 𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨, noo soo dir magaca adeegga aad rabto, faahfaahinta ganacsigaaga, iyo wixii fikrad ah ee aad qabto. Kadib waxaan kuu diyaarin doonaa naqshad xirfad leh.";
-}
-
-else if(msg.includes("prescription") || msg.includes("farmashi")){
-answer = "Waxaan naqshadeynaa Prescription Pad casri ah oo loogu talagalay farmashiyeyaasha iyo xarumaha caafimaadka. Waxaa lagu dari karaa magaca, logo-ga, cinwaanka iyo xogta muhiimka ah ee ganacsiga.";
-}
-
-else if(msg.includes("book") || msg.includes("cover")){
-answer = "Waxaan kuu sameyn karnaa Book Cover qurux badan oo xirfad leh, kaas oo ka dhigaya buuggaaga mid soo jiita akhristayaasha.";
-}
-
-else if(msg.includes("business card")){
-answer = "Waxaan sameynaa Business Card professional ah oo kaa caawinaya inaad si fiican u soo bandhigto ganacsigaaga iyo xiriirka macaamiisha.";
-}
-
-else{
-answer = "Ku soo dhawoow 𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨. Waxaan kaa caawin karnaa Logo Design, Website Design, Branding, Book Cover, Business Card, Prescription Pad iyo adeegyo kale oo naqshadeyn ah. Fadlan ii sheeg adeegga aad rabto.";
-}
+const msg = document.getElementById("userInput").value;
 
 document.getElementById("reply").innerHTML +=
 '<div class="user-message">' + msg + '</div>';
 
 document.getElementById("reply").innerHTML +=
-'<div id="typing" class="ai-message">...</div>';
+'<div id="typing" class="ai-message">🤖 Nova AI is typing...</div>';
 
-setTimeout(function(){
+const res = await fetch("/api/chat", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    message: msg
+  })
+});
+
+const data = await res.json();
 
 document.getElementById("typing").remove();
 
 document.getElementById("reply").innerHTML +=
-'<div class="ai-message">🤖 <b>Nova AI</b><br>' + answer + '</div>';
+'<div class="ai-message">🤖 <b>Nova AI</b><br>' + data.answer + '</div>';
 
-},1000);
+document.getElementById("userInput").value = "";
+
   }
 </script>
   

@@ -47,27 +47,36 @@ Prescription Pad Design
 <button onclick="chat()">Dir</button>
 <p id="reply"></p>
 </div>
-
 <script>
 function chat(){
-let msg = document.getElementById("userInput").value;
+let msg = document.getElementById("userInput").value.toLowerCase();
 let answer = "";
 
-if(msg.toLowerCase().includes("logo")){
-answer = "Waxaan kuu sameyn karnaa Logo Design casri ah oo qurux badan ✨";
+if(msg.includes("logo")){
+answer = "✨ Waxaan kuu sameyn karnaa Logo Design casri ah oo xirfad leh.";
 }
-else if(msg.toLowerCase().includes("website")){
-answer = "Waxaan sameynaa Website Design tayo leh 💻";
+else if(msg.includes("website")){
+answer = "💻 Waxaan sameynaa Website Design tayo leh oo ku habboon ganacsigaaga.";
 }
-else if(msg.toLowerCase().includes("prescription")){
-answer = "Waxaan naqshadeynaa Prescription Pad loogu talagalay farmashiyeyaasha 🏥";
+else if(msg.includes("book") || msg.includes("cover")){
+answer = "📚 Waxaan kuu naqshadeynaa Book Cover qurux badan.";
+}
+else if(msg.includes("business")){
+answer = "💳 Waxaan sameynaa Business Card professional ah.";
+}
+else if(msg.includes("branding")){
+answer = "🚀 Waxaan kaa caawineynaa Branding dhammeystiran.";
+}
+else if(msg.includes("prescription") || msg.includes("farmashi")){
+answer = "🏥 Waxaan naqshadeynaa Prescription Pad casri ah.";
 }
 else{
-answer = "Ku soo dhawoow Nova Designs ✨ Waxaan kaa caawin karnaa adeegyada design-ka.";
+answer = "🤖 Ku soo dhawoow Nova Designs AI Assistant ✨ Waxaan kaa caawin karnaa adeegyada design-ka.";
 }
 
 document.getElementById("reply").innerHTML = answer;
 }
 </script>
+
 </body>
 </html>

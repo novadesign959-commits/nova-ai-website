@@ -131,9 +131,7 @@ Prescription Pad Design
 <div class="chat-box">
 <input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;">
 <button onclick="chat()">Dir</button>
-<div id="reply">
-  
-</div>
+<div id="reply"></div>
 </div>
 
 <script>
@@ -174,7 +172,7 @@ else{
 answer = "Ku soo dhawoow 𝑵𝑶𝑽𝑨 𝑫𝑬𝑺𝑰𝑮𝑵𝑺 ✨. Waxaan kaa caawin karnaa Logo Design, Website Design, Branding, Book Cover, Business Card, Prescription Pad iyo adeegyo kale oo naqshadeyn ah. Fadlan ii sheeg adeegga aad rabto.";
 }
 
-document.getElementById("reply").innerHTML =
+document.getElementById("reply").innerHTML +=
 '<div class="user-message">' + msg + '</div>' +
 '<div class="ai-message">' + answer + '</div>';
 }

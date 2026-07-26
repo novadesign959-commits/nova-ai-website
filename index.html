@@ -138,6 +138,21 @@ button {
     opacity: 0.2;
   }
 }
+.dark {
+  background:#111;
+  color:white;
+}
+
+.dark .box,
+.dark .chat-box {
+  background:#222;
+  color:white;
+}
+
+.dark input {
+  background:#333;
+  color:white;
+  }
 </style>
 </head>
 
@@ -155,6 +170,7 @@ Prescription Pad Design
 </p>
 
 <button>La hadal AI</button>
+<button onclick="darkMode()">🌙 Dark Mode</button>
 </div>
 <div class="chat-box">
 <input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
@@ -163,6 +179,9 @@ Prescription Pad Design
 </div>
 
 <script>
+function darkMode(){
+document.body.classList.toggle("dark");
+}
 function chat(){
 
 let msg = document.getElementById("userInput").value.toLowerCase();

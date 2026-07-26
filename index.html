@@ -157,32 +157,60 @@ Prescription Pad Design
 </div>
 
 <script>
-async function chat() {
+function chat(){
 
-const msg = document.getElementById("userInput").value;
+let msg = document.getElementById("userInput").value.toLowerCase();
+let answer = "";
+
+if(msg.includes("logo")){
+answer = "🎨 Nova Designs ✨ waxay kuu samayn kartaa Logo casri ah oo xirfad leh, ku habboon ganacsigaaga.";
+}
+
+else if(msg.includes("website") || msg.includes("web")){
+answer = "🌐 Waxaan dhisnaa website-yo casri ah oo degdeg ah, kuna shaqeeya mobile iyo computer.";
+}
+
+else if(msg.includes("brand") || msg.includes("branding")){
+answer = "🎯 Waxaan bixinnaa adeegyo Branding ah sida Logo, Midabada ganacsiga, Business Card iyo Identity dhamaystiran.";
+}
+
+else if(msg.includes("prescription") || msg.includes("farmashi")){
+answer = "💊 Waxaan naqshadeynaa Prescription Pad casri ah oo loogu talagalay farmashiyeyaasha iyo xarumaha caafimaadka.";
+}
+
+else if(msg.includes("book") || msg.includes("cover")){
+answer = "📚 Waxaan kuu samayn karnaa Book Cover qurux badan oo soo jiidasho leh.";
+}
+
+else if(msg.includes("business card")){
+answer = "💼 Waxaan sameynaa Business Card professional ah oo tayo sare leh.";
+}
+
+else if(msg.includes("price") || msg.includes("qiimo") || msg.includes("lacag")){
+answer = "💰 Qiimaha wuxuu ku xiran yahay adeegga aad rabto. Fadlan nala soo xiriir si aan kuu siino qiimaha saxda ah.";
+}
+
+else if(msg.includes("order") || msg.includes("dalbo")){
+answer = "📩 Si aad u dalbato adeeg, noo soo dir magaca adeegga iyo faahfaahinta aad rabto.";
+}
+
+else if(msg.includes("contact") || msg.includes("xiriir") || msg.includes("whatsapp")){
+answer = "📱 Nala soo xiriir WhatsApp: +252 711552370";
+}
+
+else if(msg.includes("hello") || msg.includes("hi") || msg.includes("asc") || msg.includes("asalaamu")){
+answer = "👋 Ku soo dhawoow Nova Designs ✨. Sideen maanta kuu caawin karaa?";
+}
+
+else{
+answer = "🤖 Ku soo dhawoow Nova Designs ✨. Waxaan bixinnaa Logo Design, Website Design, Branding, Business Card, Book Cover, Prescription Pad iyo adeegyo kale. Wixii faahfaahin ah WhatsApp: +252 711552370.";
+}
 
 document.getElementById("reply").innerHTML +=
 '<div class="user-message">' + msg + '</div>';
 
 document.getElementById("reply").innerHTML +=
-'<div id="typing" class="ai-message">🤖 Nova AI is typing...</div>';
-
-const res = await fetch("/api/chat", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    message: msg
-  })
-});
-
-const data = await res.json();
-
-document.getElementById("typing").remove();
-
-document.getElementById("reply").innerHTML +=
-'<div class="ai-message">🤖 <b>Nova AI</b><br>' + data.answer + '</div>';
+'<div class="ai-message">🤖 <b>Nova AI</b><br>' + answer + '</div>';
 
 document.getElementById("userInput").value = "";
 

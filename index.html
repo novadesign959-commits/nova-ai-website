@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nova Designs AI Assistant</title>
 <style>
 body {
@@ -229,6 +230,14 @@ button {
   padding:20px;
 }
   .chat-box {
+  width:100%;
+  min-height:calc(100vh - 120px);
+  max-width:none;
+  margin:0;
+  border-radius:0;
+  padding:15px;
+  }
+  .chat-box {
   backdrop-filter: blur(10px);
   border:1px solid #eee;
 }
@@ -273,8 +282,9 @@ button {
   @media (max-width:600px){
 
 body{
-  padding:10px;
+  padding:0;
 }
+
 
 .box{
   padding:20px;

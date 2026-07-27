@@ -221,6 +221,23 @@ button {
   max-width:700px;
   margin:20px auto;
 }
+.typing {
+  background:white;
+  padding:12px;
+  border-radius:15px;
+  width:fit-content;
+}
+
+.typing span {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity:0.2;
+  }
+  
+ } 
 </style>
 </head>
 
@@ -259,7 +276,8 @@ function darkMode(){
 document.body.classList.toggle("dark");
 }
 function chat(){
-
+document.getElementById("reply").innerHTML +=
+'<div class="typing">🤖 Nova AI <span>●</span><span>●</span><span>●</span></div>';
 let msg = document.getElementById("userInput").value.toLowerCase();
 let answer = "";
 
@@ -310,8 +328,14 @@ answer = "🤖 Ku soo dhawoow Nova Designs ✨. Waxaan bixinnaa Logo Design, Web
 document.getElementById("reply").innerHTML +=
 '<div class="user-message">' + msg + '</div>';
 
+setTimeout(function(){
+
+document.querySelector(".typing").remove();
+
 document.getElementById("reply").innerHTML +=
 '<div class="ai-message">🤖 <b>Nova AI</b><br>' + answer + '</div>';
+
+},1500);
 
 document.getElementById("userInput").value = "";
 

@@ -394,15 +394,15 @@ La hadal AI
 <input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
 <button onclick="chat()">Dir</button>
   
-  <div class="quick-buttons">
+<div class="quick-buttons">
 
-<button>🎨 Logo Design</button>
+<button onclick="quickChat('logo')">🎨 Logo Design</button>
 
-<button>🌐 Website</button>
+<button onclick="quickChat('website')">🌐 Website</button>
 
-<button>💼 Business Card</button>
+<button onclick="quickChat('business card')">💼 Business Card</button>
 
-<button>📢 Flyer</button>
+<button onclick="quickChat('flyer')">📢 Flyer</button>
 
 </div>
 
@@ -413,6 +413,10 @@ La hadal AI
 function darkMode(){
 document.body.classList.toggle("dark");
 }
+  function quickChat(text){
+document.getElementById("userInput").value = text;
+chat();
+  }
 function chat(){
 document.getElementById("reply").innerHTML +=
 '<div class="typing">🤖 Nova AI <span>●</span><span>●</span><span>●</span></div>';

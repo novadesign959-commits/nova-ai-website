@@ -401,9 +401,11 @@ La hadal AI
   <img src="logo.png" class="ai-logo">
   <b>Nova AI</b>
 </div>
-<input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
+<input id="userInput" placeholder="Qor ama ku hadal..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
+
+<button onclick="startVoice()">🎤</button>
+
 <button onclick="chat()">Dir</button>
-  
 <div class="quick-buttons">
   
 <button onclick="speakLast()">🔊 Dhageyso</button>
@@ -437,6 +439,24 @@ function speakLast(){
 function darkMode(){
 document.body.classList.toggle("dark");
 }
+function startVoice(){
+
+let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+recognition.lang = "so-SO";
+
+recognition.start();
+
+recognition.onresult = function(event){
+
+let text = event.results[0][0].transcript;
+
+document.getElementById("userInput").value = text;
+
+};
+
+  }
+  
   function speak(text){
 
 let voice = new SpeechSynthesisUtterance(text);

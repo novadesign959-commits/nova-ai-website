@@ -119,8 +119,7 @@ button {
   text-align: left;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
-}
-}
+
 .dot {
   animation: blink 1s infinite;
 }
@@ -175,6 +174,10 @@ Prescription Pad Design
 <button onclick="darkMode()">🌙 Dark Mode</button>
 </div>
 <div class="chat-box">
+<div class="ai-header">
+  <img src="logo.png" class="ai-logo">
+  <b>Nova AI</b>
+</div>
 <input id="userInput" placeholder="Qor su'aashaada..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
 <button onclick="chat()">Dir</button>
 <div id="reply"></div>

@@ -444,7 +444,8 @@ function startVoice(){
 let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
 
 recognition.lang = "so-SO";
-
+recognition.continuous = false;
+recognition.interimResults = false;
 recognition.start();
 
 recognition.onresult = function(event){

@@ -181,7 +181,46 @@ button {
   gap:10px;
   font-size:20px;
   }
+#reply {
+  max-height:400px;
+  overflow-y:auto;
+}
 
+.user-message {
+  background:#222;
+  color:white;
+  padding:12px 15px;
+  border-radius:18px 18px 0 18px;
+  margin:10px 0;
+  margin-left:auto;
+  max-width:80%;
+  text-align:right;
+}
+
+.ai-message {
+  background:white;
+  color:#333;
+  padding:12px 15px;
+  border-radius:18px 18px 18px 0;
+  margin:10px 0;
+  margin-right:auto;
+  max-width:80%;
+  text-align:left;
+    }
+  #userInput {
+  background:white;
+  border:1px solid #ddd;
+  outline:none;
+}
+
+#userInput:focus {
+  border-color:#333;
+}
+
+.chat-box {
+  max-width:700px;
+  margin:20px auto;
+}
 </style>
 </head>
 

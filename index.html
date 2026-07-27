@@ -413,6 +413,13 @@ La hadal AI
 function darkMode(){
 document.body.classList.toggle("dark");
 }
+  function speak(text){
+  let voice = new SpeechSynthesisUtterance(text);
+  voice.lang = "so-SO";
+  voice.rate = 1;
+  voice.pitch = 1;
+  speechSynthesis.speak(voice);
+                                           }
   function quickChat(text){
 document.getElementById("userInput").value = text;
 chat();
@@ -493,6 +500,7 @@ function typeEffect(){
 }
 
 typeEffect();
+speak(answer);
 
 },1500);
 

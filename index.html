@@ -323,6 +323,21 @@ h1{
   font-size:30px;
   text-decoration:none;
 }    
+.ai-message,
+.user-message {
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity:0;
+    transform:translateY(15px);
+  }
+  to {
+    opacity:1;
+    transform:translateY(0);
+  }
+}  
 </style>
 </head>
 

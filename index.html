@@ -395,6 +395,8 @@ La hadal AI
 <button onclick="chat()">Dir</button>
   
 <div class="quick-buttons">
+  
+<button onclick="speakLast()">🔊 Dhageyso</button>
 
 <button onclick="quickChat('logo')">🎨 Logo Design</button>
 
@@ -412,6 +414,16 @@ La hadal AI
 <button onclick="speakLast()">🔊 Dhageyso</button>
   
 <script>
+let lastAnswer = "";
+
+function speakLast(){
+  if(lastAnswer !== ""){
+    speak(lastAnswer);
+  } else {
+    alert("Marka hore AI la hadal");
+  }
+}
+  
 function darkMode(){
 document.body.classList.toggle("dark");
 }
@@ -502,7 +514,7 @@ function typeEffect(){
 }
 
 typeEffect();
-speak(answer);
+lastAnswer = answer;
 
 },1500);
 

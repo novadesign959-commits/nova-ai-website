@@ -402,7 +402,7 @@ La hadal AI
   <b>Nova AI</b>
 </div>
 <input id="userInput" placeholder="Qor ama ku hadal..." style="padding:10px;width:70%;" onkeypress="if(event.key==='Enter'){chat();}">
-
+<input type="file" id="imageUpload" accept="image/*">
 <button onclick="startVoice()">🎤</button>
 
 <button onclick="chat()">Dir</button>
@@ -568,6 +568,12 @@ document.getElementById("userInput").value = "";
 document.getElementById("reply").scrollTop =
 document.getElementById("reply").scrollHeight;  
   }
+  document.getElementById("imageUpload").onchange = function(){
+
+alert("Sawirka waa la doortay");
+
+};
+  
 </script>
   <a class="whatsapp-float" href="https://wa.me/252711552370">
 🟢

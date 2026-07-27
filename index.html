@@ -631,9 +631,19 @@ document.getElementById("userInput").value = "";
 document.getElementById("reply").scrollTop =
 document.getElementById("reply").scrollHeight;  
   }
-  document.getElementById("imageUpload").onchange = function(){
+document.getElementById("imageUpload").onchange = function(event){  
+let file = event.target.files[0];
 
-alert("Sawirka waa la doortay");
+let image = document.createElement("img");
+
+image.src = URL.createObjectURL(file);
+
+image.style.width = "200px";
+
+image.style.borderRadius = "15px";
+
+document.getElementById("reply").appendChild(image);
+
 
 };
   

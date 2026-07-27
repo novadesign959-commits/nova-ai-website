@@ -356,8 +356,21 @@ setTimeout(function(){
 
 document.querySelector(".typing").remove();
 
-document.getElementById("reply").innerHTML +=
-'<div class="ai-message">🤖 <b>Nova AI</b><br>' + answer + '</div>';
+let aiBox = document.createElement("div");
+aiBox.className = "ai-message";
+document.getElementById("reply").appendChild(aiBox);
+
+let i = 0;
+
+function typeEffect(){
+  if(i < answer.length){
+    aiBox.innerHTML = "🤖 <b>Nova AI</b><br>" + answer.substring(0, i);
+    i++;
+    setTimeout(typeEffect, 50);
+  }
+}
+
+typeEffect();
 
 },1500);
 

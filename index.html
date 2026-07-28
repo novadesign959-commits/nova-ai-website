@@ -732,19 +732,28 @@ document.getElementById("userInput").value = "";
 document.getElementById("reply").scrollTop =
 document.getElementById("reply").scrollHeight;  
   }
-document.getElementById("imageUpload").onchange = function(event){  
+document.getElementById("imageUpload").onchange = function(event){
+
 let file = event.target.files[0];
 
 let image = document.createElement("img");
 
 image.src = URL.createObjectURL(file);
 
-image.style.width = "200px";
-
+image.style.width = "250px";
 image.style.borderRadius = "15px";
+image.style.margin = "10px";
 
 document.getElementById("reply").appendChild(image);
 
+
+let aiBox = document.createElement("div");
+aiBox.className = "ai-message";
+
+aiBox.innerHTML =
+"🤖 <b>Nova AI</b><br>Waan helay sawirkaaga. Maxaad rabtaa inaan kaa caawiyo?";
+
+document.getElementById("reply").appendChild(aiBox);
 
 };
   

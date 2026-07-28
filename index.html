@@ -513,23 +513,34 @@ La hadal AI
 <script>
 let lastAnswer = "";
 function sendOrder() {
+
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
   let service = document.getElementById("service").value;
   let details = document.getElementById("details").value;
 
   let text =
-`Dalab Cusub
+`🛒 DALAB CUSUB - Nova Designs ✨
 
-Magac: ${name}
-WhatsApp: ${phone}
-Adeeg: ${service}
-Faahfaahin: ${details}`;
+👤 Magaca:
+${name}
+
+📱 WhatsApp:
+${phone}
+
+🎨 Adeegga:
+${service}
+
+📝 Faahfaahin:
+${details}
+
+Mahadsanid inaad dooratay Nova Designs ✨`;
 
   window.open(
     "https://wa.me/252711552370?text=" + encodeURIComponent(text),
     "_blank"
   );
+
   }
 function speakLast(){
   if(lastAnswer !== ""){

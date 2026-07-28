@@ -4,12 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nova Designs AI Assistant</title>
 <style>
-body {
-  font-family: Arial;
-  text-align: center;
-  background: #f5f5f5;
-  padding: 40px;
-}
+
 .box {
   background: white;
   padding: 30px;
@@ -279,12 +274,12 @@ button {
   }  
  }
 
-  @media (max-width:600px){
+@media (max-width:600px){
 
 body{
   padding:0;
+  margin:0;
 }
-
 
 .box{
   padding:20px;
@@ -298,8 +293,21 @@ h1{
 .chat-box{
   width:100%;
   max-width:100%;
+  min-height:100vh;
   padding:15px;
-  border-radius:20px;
+  border-radius:0;
+}
+
+#userInput{
+  width:65%;
+}
+
+.user-message,
+.ai-message{
+  max-width:90%;
+  font-size:15px;
+}
+
 }
 
 #userInput{

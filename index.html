@@ -453,6 +453,24 @@ button{
   border-radius:50%;
   object-fit:cover;
   }
+  #toast{
+  visibility:hidden;
+  min-width:250px;
+  background:#10a37f;
+  color:white;
+  text-align:center;
+  padding:15px;
+  border-radius:15px;
+  position:fixed;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:999;
+}
+
+#toast.show{
+  visibility:visible;
+  }
 </style>
 </head>
 
@@ -666,7 +684,17 @@ document.getElementById("reply").innerHTML +=
 '<div class="typing">🤖 Nova AI <span>●</span><span>●</span><span>●</span></div>';
 let msg = document.getElementById("userInput").value.toLowerCase();
 let answer = "";
+if(msg.includes("logo")){
+answer = "🎨 Nova Designs ✨ waxay kuu samayn kartaa Logo casri ah oo xirfad leh.";
+}
 
+else if(msg.includes("website")){
+answer = "🌐 Waxaan dhisnaa Website casri ah oo mobile iyo computer ku shaqeeya.";
+}
+
+else if(msg.includes("hello") || msg.includes("asc")){
+answer = "👋 Ku soo dhawoow Nova Designs ✨. Sideen kuu caawin karaa?";
+  }
 if(msg.includes("logo")){
 answer = "🎨 Nova Designs ✨ waxay kuu samayn kartaa Logo casri ah oo xirfad leh, ku habboon ganacsigaaga.";
 }

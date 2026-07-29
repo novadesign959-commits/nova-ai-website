@@ -587,6 +587,52 @@ button:hover{
   .chat-box{
   display:none;
   }
+  /* 📱 Nova AI Mobile App Style */
+
+html, body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
+.chat-box{
+  height:100vh;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  padding:10px;
+  box-sizing:border-box;
+}
+
+.ai-header{
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+#reply{
+  flex:1;
+  overflow-y:auto;
+  margin-bottom:10px;
+}
+
+#userInput{
+  flex:1;
+}
+
+@media(max-width:600px){
+
+.ai-header b{
+  font-size:20px;
+}
+
+button{
+  padding:12px;
+}
+
+  }
 </style>
 </head>
 

@@ -582,7 +582,11 @@ button:hover{
   50%{
     transform:translateY(-10px);
   }
-                             }
+  
+}
+  .chat-box{
+  display:none;
+  }
 </style>
 </head>
 
@@ -596,8 +600,8 @@ button:hover{
 <p>
 Ku soo dhawoow Nova Designs AI Assistant ✨
 </p>
-
-<button class="start-btn">
+    
+<button class="start-btn" onclick="startChat()">
 💬 La hadal Nova AI
 </button>
 
@@ -723,6 +727,10 @@ Hal-abuurkaaga waxaan u beddelnaa
 <button onclick="speakLast()">🔊 Dhageyso</button>
   
 <script>
+  function startChat(){
+  document.getElementById("welcome").style.display="none";
+  document.querySelector(".chat-box").style.display="block";
+  }
 let lastAnswer = "";
 function sendOrder() {
 
